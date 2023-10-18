@@ -5,6 +5,9 @@ import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
+import Login from './components/Login/login';
+import Register from './components/Register/register';
+
 class App extends React.Component {
   state = {
     data: null
@@ -46,12 +49,8 @@ class App extends React.Component {
               {this.state.data}
             </Route>
             <Switch>
-              <Route path="/register">
-                Register
-              </Route>
-              <Route path="/login">
-                Login
-              </Route>
+              <Route exact path="/register" component={Register}/>
+              <Route exact path="/login" component={Login}/>
             </Switch>
           </main>
         </div>
